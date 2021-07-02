@@ -1,6 +1,7 @@
-const patr = document.querySelector("p");
+const pl = document.querySelectorAll('p');
 
-console.log(patr.getAttribute('class'));
-
-patr.setAttribute('class', 'success');
-patr.innerText = "Succesful login!";
+pl.forEach(p => {
+    console.log(p.textContent);
+    if (p.textContent.includes('error')){
+    p.classList.add('error')}
+});
