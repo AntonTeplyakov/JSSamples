@@ -1,8 +1,6 @@
-const link = document.querySelector("a");
+const patr = document.querySelector("p");
 
-console.log(link.getAttribute("href"));
+console.log(patr.getAttribute('class'));
 
-link.setAttribute('href', "https://www.Transit.ru");
-link.innerText = "Transit.ru";
-
-console.log(link.getAttribute("href"));
+patr.setAttribute('class', 'success');
+patr.innerText = "Succesful login!";
