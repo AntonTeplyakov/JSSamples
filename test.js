@@ -1,8 +1,8 @@
-const ul = document.querySelector('ul');
+const link = document.querySelector("a");
 
-arr = ['Jack', 'Anton', 'Jane', 'Lee'];
+console.log(link.getAttribute("href"));
 
-arr.forEach((people, ind) => {
-    ul.innerHTML += `<li>The best score: ${ind+1}. ${people}</li>`
-});
+link.setAttribute('href', "https://www.Transit.ru");
+link.innerText = "Transit.ru";
 
+console.log(link.getAttribute("href"));
