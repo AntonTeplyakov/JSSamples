@@ -1,5 +1,9 @@
-const button = document.querySelector('button');
+const li = document.querySelectorAll('li');
 
-button.addEventListener('click', ()=>{
-    console.log('Clicked button!');
-})
+li.forEach(item=>{
+    item.addEventListener('click',e =>{
+        // e.target.style.textDecoration = 'line-through';
+        e.target.remove();
+    });
+});
+
