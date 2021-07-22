@@ -9,8 +9,8 @@
 
 const arr = [10, 15, 40, 5, 60, 35, 25, 45, 5, 10];
 
-const result = arr.filter((arr) => {
-    return arr < 20;
+const result = arr.map((arr) => {
+    return arr = arr / 5;
 });
 
 console.log(result);
