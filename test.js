@@ -15,18 +15,27 @@
 
 // console.log(result);
 
-const now = new Date();
+// const now = new Date();
 
-console.log(now);
-console.log("Year: ", now.getFullYear());
-console.log("Month: ", now.getMonth());
-console.log("Day: ", now.getDay());
-console.log("Hours: ", now.getHours());
-console.log("Minutes: ", now.getMinutes());
-console.log("Seconds: ", now.getSeconds());
+// console.log(now);
+// console.log("Year: ", now.getFullYear());
+// console.log("Month: ", now.getMonth());
+// console.log("Day: ", now.getDay());
+// console.log("Hours: ", now.getHours());
+// console.log("Minutes: ", now.getMinutes());
+// console.log("Seconds: ", now.getSeconds());
 
-console.log("Time: ", now.getTime());
+// console.log("Time: ", now.getTime());
 
-console.log("ShortDate", now.toDateString());
-console.log("ShortTime", now.toTimeString());
-console.log("System", now.toLocaleString());
+// console.log("ShortDate", now.toDateString());
+// console.log("ShortTime", now.toTimeString());
+// console.log("System", now.toLocaleString());
+const clock = document.querySelector('.clock'); 
+
+setInterval(()=>{
+    const now = new Date();
+    const Hours = now.getHours();
+    const Minutes = now.getMinutes();
+    const Seconds = now.getSeconds();
+    clock.innerHTML = Hours + " : " + Minutes + " : " + Seconds;
+}, 1000);
