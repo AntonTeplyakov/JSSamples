@@ -1,41 +1,42 @@
-// const li = document.querySelectorAll('li');
+const getTodos = (resource, callback) => {
+  const request = new XMLHttpRequest();
 
-// li.forEach(item=>{
-//     item.addEventListener('click',e =>{
-//         // e.target.style.textDecoration = 'line-through';
-//         e.target.remove();
-//     });
+  request.addEventListener("readystatechange", () => {
+    console.log(request, request.readyState);
+    if (request.readyState === 4 && request.status === 200) {
+      const data = JSON.parse(request.responseText);
+      callback(undefined, data);
+      console.log(request, request.responseText);
+    } else if (request.readyState === 4);
+    {
+      callback("could not fetch data", undefined);
+    }
+  });
+
+  request.open("GET", resource);
+  request.send();
+};
+
+const getSomething = () => {
+    return new Promise((resolve,reject) =>{
+        //fetch something
+        resolve('some data');
+       // reject('some error');
+    });
+};
+
+getSomething().then((data) =>{
+  console.log(data);
+},(err) =>{
+  console.log(err);
+});
+
+
+
+// let resource = "https://jsonplaceholder.typicode.com/posts";
+
+// getTodos(resource, (err, data) => {
+//   console.log(data);
 // });
 
-// const arr = [10, 15, 40, 5, 60, 35, 25, 45, 5, 10];
 
-// const result = arr.map((arr) => {
-//     return arr = arr / 5;
-// });
-
-// console.log(result);
-
-// const now = new Date();
-
-// console.log(now);
-// console.log("Year: ", now.getFullYear());
-// console.log("Month: ", now.getMonth());
-// console.log("Day: ", now.getDay());
-// console.log("Hours: ", now.getHours());
-// console.log("Minutes: ", now.getMinutes());
-// console.log("Seconds: ", now.getSeconds());
-
-// console.log("Time: ", now.getTime());
-
-// console.log("ShortDate", now.toDateString());
-// console.log("ShortTime", now.toTimeString());
-// console.log("System", now.toLocaleString());
-const clock = document.querySelector('.clock'); 
-
-setInterval(()=>{
-    const now = new Date();
-    const Hours = now.getHours();
-    const Minutes = now.getMinutes();
-    const Seconds = now.getSeconds();
-    clock.innerHTML = Hours + " : " + Minutes + " : " + Seconds;
-}, 1000);
