@@ -1,2 +1,2 @@
 # JSSamples
-my test repository
+my sandbox, test repository
