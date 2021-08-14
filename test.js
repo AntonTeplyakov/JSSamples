@@ -1,20 +1,19 @@
-<<<<<<< HEAD
 class User {
-    constructor(username,email){
+    constructor(username, email) {
         this.username = username;
         this.email = email;
         this.score = 0;
     }
 
-    login(){
+    login() {
         console.log(`${this.username} just logged in`);
-        return this;   
-    }
-    logout(){
-        console.log(`${this.username} just logged out`);   
         return this;
     }
-    incScore(){
+    logout() {
+        console.log(`${this.username} just logged out`);
+        return this;
+    }
+    incScore() {
         this.score += 1;
         console.log(`${this.username} has a score of ${this.score}`);
         return this;
@@ -22,21 +21,27 @@ class User {
 
 }
 
-const userOne = new User('dfgdfdg','ertretrrt@dfgdfgd.com');
-const userTwo = new User('fdhdfh','dfgdfgd@dfgdfgd.com');
+class Admin extends User {
+    constructor(username, email, title) {
+        super(username, email);
+        this.title = title;
+    }
+    deleteUser(user) {
+        users = users.filter((u) => {
+            return u.username !== user.username
+        })
+    }
+}
 
-console.log(userOne.login().logout());
-console.log(userTwo.login().incScore().incScore());
-=======
-localStorage.setItem("Anton", 34);
+const userOne = new User('Jane', 'mirror@jeneva.com');
+const userTwo = new User('Richard', 'gray@tea.com');
+const userThree = new Admin('Anton', 'jsxlabor@SpeechGrammarList.com', 'blank');
 
-let age = localStorage.Anton;
 
-console.log(age);
+let users = [userOne, userTwo, userThree];
 
-localStorage.removeItem("Anton");
+userThree.deleteUser(userTwo);
 
-let my_age = localStorage.getItem("Anton");
-
-console.log(my_age);
->>>>>>> ff9fdc5a12b7d52ab89e5297a8f6bd85f52c66f4
+console.log(userOne, userTwo, userThree);
+userThree.incScore();
+console.log(users);
