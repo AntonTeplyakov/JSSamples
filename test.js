@@ -1,11 +1,5 @@
-localStorage.setItem("Anton", 34);
+const m = ([...spr])=>{
+    console.log(spr);
+};
 
-let age = localStorage.Anton;
-
-console.log(age);
-
-localStorage.removeItem("Anton");
-
-let my_age = localStorage.getItem("Anton");
-
-console.log(my_age);
+m(new Set(['dfgdfg', 'sdgdsg','gdsfgdg']));
